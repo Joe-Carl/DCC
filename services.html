@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Dreamland Christian Centre</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/x-icon" href="dreamland Logo png - Copy.png"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0; padding:0; box-sizing:border-box; font-family:'Poppins', sans-serif;}
+body{background:#0f172a; color:#e2e8f0;}
+
+/* HERO */
+.hero{
+    height:60vh;
+    background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.7)),
+    url('WhatsApp Image 2026-02-24 at 17.27.16 (3).jpeg');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+.hero h1{
+    font-size:3rem;
+    color:white;
+    opacity:0;
+    animation:fadeSlideDown 1s ease forwards;
+}
+
+/* NAV */
+nav{background:rgba(15,23,42,0.95); padding:18px; text-align:center; position:sticky; top:0; z-index:1000; backdrop-filter:blur(10px);}
+nav a{color:#e2e8f0; text-decoration:none; margin:0 20px; font-weight:500; transition:0.3s;}
+nav a:hover{color:#38bdf8;}
+
+/* SECTION */
+section{padding:80px 20px; text-align:center;}
+h2{font-size:32px; margin-bottom:30px; color:#38bdf8; opacity:0; transform:translateY(30px); transition:1s ease;}
+
+/* SERVICE CARDS */
+.service-card{position:relative; padding:80px 30px; margin-bottom:50px; border-radius:20px; overflow:hidden; color:white; background-size:cover; background-position:center; transition:0.4s; opacity:0; transform:translateY(30px);}
+.service-card::before{content:""; position:absolute; inset:0; background:rgba(0,0,0,0.7);}
+.service-card h3, .service-card p{position:relative; z-index:2;}
+.service-card:hover{transform:scale(1.03);}
+
+/* SERMON SECTION */
+.sermon-container{max-width:1100px; margin:auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:25px;}
+.sermon-card{background:rgba(255,255,255,0.05); backdrop-filter:blur(10px); border-radius:20px; overflow:hidden; transition:0.6s; opacity:0; transform:translateY(40px);}
+.sermon-card iframe{width:100%; height:220px; border:none; border-radius:10px 10px 0 0;}
+.sermon-content{padding:20px;}
+.sermon-content h4{margin-bottom:10px; color:#38bdf8;}
+.sermon-card:hover{transform:translateY(-8px) scale(1.02); box-shadow:0 10px 20px rgba(56,189,248,0.4);}
+
+/* FOOTER */
+footer{padding:20px; background:#020617; text-align:center; opacity:0; transform:translateY(20px); transition:1s ease;}
+
+/* KEYFRAMES */
+@keyframes fadeSlideDown{
+    0%{opacity:0; transform:translateY(-40px);}
+    100%{opacity:1; transform:translateY(0);}
+}
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+    <h1>Our Church Services</h1>
+</section>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="Visit.html">Plan a visit</a>
+    <a href="branch.html">Branches</a>
+</nav>
+
+<!-- SERVICES DESCRIPTION -->
+<section>
+    <h2>Sunday Worship Service</h2>
+    <div class="service-card" style="background:url('WhatsApp Image 2026-02-24 at 17.27.17 (1).jpeg') center/cover;">
+        <h3>Sunday – 9:00 AM to 12:00 PM</h3>
+        <p>A powerful worship experience filled with praise, teaching, prayer and divine encounters.</p>
+    </div>
+
+    <h2>Tuesday Prayer Service</h2>
+    <div class="service-card" style="background:url('WhatsApp Image 2026-02-24 at 17.27.16 (2).jpeg') center/cover;">
+        <h3>Tuesday – 7:00 PM to 9:00 PM</h3>
+        <p>A time of deep intercession, spiritual warfare and seeking God's direction.</p>
+    </div>
+
+    <h2>Friday Empowerment Service</h2>
+    <div class="service-card" style="background:url('WhatsApp Image 2026-02-24 at 17.27.15 (1).jpeg') center/cover;">
+        <h3>Friday – 7:00 PM to 9:00 PM</h3>
+        <p>A service focused on empowerment, healing, prophetic direction and spiritual growth.</p>
+    </div>
+</section>
+
+<!-- SERMON UPDATES SECTION -->
+<section>
+    <h2>Latest Sermons & Updates</h2>
+    <div class="sermon-container" id="sermonContainer">
+        <!-- Dynamic sermon cards added here -->
+    </div>
+</section>
+
+<footer>©️ 2026 Dreamland Christian Centre | All Rights Reserved</footer>
+
+<script>
+// Sermons array
+const sermons = [
+    {title:"The Power of Faith", type:"youtube", url:"https://www.youtube.com/embed/YOUR_YOUTUBE_VIDEO_ID"},
+    {title:"Victory Through Prayer", type:"tiktok", url:"https://www.tiktok.com/embed/https://vt.tiktok.com/ZSmGYMrwt/"},
+    {title:"Faith in Action", type:"facebook", url:"https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/share/r/1Hh52g2o6r/?mibextid=wwXIfr"}
+];
+
+const container = document.getElementById('sermonContainer');
+
+sermons.forEach((sermon, index)=>{
+    const card = document.createElement('div');
+    card.className='sermon-card';
+
+    const iframe = document.createElement('iframe');
+    iframe.src = sermon.url;
+    iframe.allow="fullscreen";
+    card.appendChild(iframe);
+
+    const content = document.createElement('div');
+    content.className='sermon-content';
+    const h4 = document.createElement('h4');
+    h4.textContent=sermon.title;
+    content.appendChild(h4);
+
+    const pDate = document.createElement('p');
+    const today = new Date();
+    const options = {year:'numeric', month:'long', day:'numeric'};
+    pDate.innerHTML=`<strong>Date:</strong> ${today.toLocaleDateString(undefined, options)}`;
+    content.appendChild(pDate);
+
+    card.appendChild(content);
+    container.appendChild(card);
+
+    // Animation delay for stagger effect
+    setTimeout(()=>{card.style.opacity=1; card.style.transform="translateY(0)";}, index*200);
+});
+
+// Scroll animations for sections
+const sections = document.querySelectorAll('h2, .service-card, footer');
+window.addEventListener('scroll', ()=>{
+    sections.forEach(el=>{
+        const top = el.getBoundingClientRect().top;
+        if(top<window.innerHeight-100){
+            el.style.opacity=1;
+            el.style.transform="translateY(0)";
+        }
+    });
+});
+</script>
+
+</body>
+</html>

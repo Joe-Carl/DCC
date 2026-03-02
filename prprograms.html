@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Dreamland Christian Centre</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/x-icon" href="dreamland Logo png - Copy.png"/>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#0f172a,#1e293b);
+    color:#e2e8f0;
+}
+
+/* HEADER */
+header{
+    background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
+    url('WhatsApp Image 2026-02-24 at 12.02.29.jpeg') center/cover no-repeat;
+    height:450px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+header h1{
+    font-size:48px;
+    font-weight:700;
+}
+
+header p{
+    margin-top:15px;
+    font-size:18px;
+    color:#cbd5e1;
+}
+
+/* NAV */
+nav{
+    background:#020617;
+    padding:15px;
+    text-align:center;
+    position:sticky;
+    top:0;
+}
+
+nav a{
+    color:#e2e8f0;
+    text-decoration:none;
+    margin:0 20px;
+    font-weight:500;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#38bdf8;
+}
+
+/* SECTIONS */
+section{
+    padding:80px 20px;
+    text-align:center;
+}
+
+h2{
+    font-size:32px;
+    margin-bottom:40px;
+    background:linear-gradient(90deg,#38bdf8,#818cf8);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.container{
+    max-width:1100px;
+    margin:auto;
+}
+
+/* PROGRAM CARDS */
+.programs{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+.program-card{
+    background:#1e293b;
+    padding:30px;
+    border-radius:15px;
+    transition:0.4s;
+    box-shadow:0 10px 30px rgba(0,0,0,0.4);
+}
+
+.program-card:hover{
+    transform:translateY(-10px);
+}
+
+.program-card h3{
+    margin-bottom:15px;
+    color:#38bdf8;
+}
+
+.program-card p{
+    font-size:15px;
+    color:#cbd5e1;
+}
+
+/* GALLERY */
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.gallery img{
+    width:100%;
+    border-radius:15px;
+    transition:0.4s;
+}
+
+.gallery img:hover{
+    transform:scale(1.05);
+}
+
+/* VIDEO SECTION */
+.video-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:20px;
+}
+
+video, iframe{
+    width:100%;
+    border-radius:15px;
+}
+
+/* FOOTER */
+footer{
+    background:#020617;
+    padding:20px;
+    text-align:center;
+    font-size:14px;
+    color:#94a3b8;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Dreamland Christian Centrr</h1>
+    <p>Prayer City | Our Year Of Great Impact</p>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="faithcity.html">Back</a>
+    <a href="#videos">Videos</a>
+</nav>
+
+<!-- PROGRAMS SECTION -->
+<section id="programs">
+    <h2>Our Major Annual Programs</h2>
+    <div class="container">
+        <div class="programs">
+
+            <div class="program-card">
+                <h3>Fresh Oil Confernce</h3>
+                <p>........</p>
+            </div>
+
+            <div class="program-card">
+                <h3>Total Leadership Conference</h3>
+                <p>..............</p>
+            </div>
+
+            <div class="program-card">
+                <h3>Yearly Aniversary </h3>
+                <p>..........</p>
+            </div>
+
+            <div class="program-card">
+                <h3>Love feast</h3>
+                <p>................</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- GALLERY SECTION -->
+<section id="gallery">
+    <h2>Photo Gallery</h2>
+    <div class="container">
+        <div class="gallery">
+
+            <!-- Replace with your own images -->
+            <img src="WhatsApp Image 2026-02-24 at 12.02.30 (1).jpeg" alt="Church Program">
+            <img src="WhatsApp Image 2026-02-24 at 12.02.30.jpeg" alt="Church Program">
+            <img src="WhatsApp Image 2026-02-24 at 17.27.15 (1).jpeg" alt="Church Program">
+            <img src="WhatsApp Image 2026-02-24 at 12.02.29 (1).jpeg" alt="Church Program">
+
+        </div>
+    </div>
+</section>
+
+<!-- VIDEO SECTION -->
+<section id="videos">
+    <h2>Watch Our Programs</h2>
+    <div class="container">
+        <div class="video-container">
+
+            <!-- Upload your own video file -->
+            <video controls>
+                <source src="vid.mp" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+
+            <!-- Or embed YouTube video -->
+            <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" 
+                    frameborder="0" 
+                    allowfullscreen>
+            </iframe>
+
+        </div>
+    </div>
+</section>
+
+<footer>
+    © 2026 Dreamland Christian Center | All Rights Reserved
+</footer>
+
+</body>
+</html>

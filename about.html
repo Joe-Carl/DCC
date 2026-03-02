@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Our Story | Dreamland Christian Center</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/x-icon" href="dreamland Logo png - Copy.png"/>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family: 'Georgia', serif;
+    background: linear-gradient(-45deg,#eef2ff,#f8fafc,#eef2ff,#ffffff);
+    background-size:400% 400%;
+    animation:bgMove 15s ease infinite;
+    color:#333;
+    line-height:1.8;
+}
+
+/* BACKGROUND ANIMATION */
+@keyframes bgMove{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+/* HEADER */
+header{
+    background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+    url('WhatsApp Image 2026-02-24 at 12.02.30 (1).jpeg') center/cover no-repeat;
+    height:420px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+    animation:fadeIn 2s ease forwards;
+}
+
+header h1{
+    font-size:50px;
+    letter-spacing:2px;
+    animation:slideDown 1.5s ease forwards;
+}
+
+header p{
+    font-size:20px;
+    margin-top:15px;
+    font-style:italic;
+    opacity:0;
+    animation:fadeIn 2s ease forwards 1s;
+}
+
+/* NAVIGATION */
+nav{
+    background-color:#0b3199;
+    padding:15px;
+    text-align:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 4px 10px rgba(0,0,0,0.2);
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 20px;
+    font-weight:bold;
+    transition:0.4s;
+    position:relative;
+}
+
+nav a::after{
+    content:'';
+    position:absolute;
+    left:0;
+    bottom:-5px;
+    width:0%;
+    height:2px;
+    background:#4ca1af;
+    transition:0.4s;
+}
+
+nav a:hover{
+    color:#4ca1af;
+}
+
+nav a:hover::after{
+    width:100%;
+}
+
+/* CONTAINER */
+.container{
+    max-width:950px;
+    margin:auto;
+    padding:70px 30px;
+    background:white;
+    margin-top:-60px;
+    border-radius:15px;
+    box-shadow:0 15px 40px rgba(0,0,0,0.1);
+    animation:fadeUp 1.5s ease forwards;
+}
+
+h2{
+    color:#0b3199;
+    text-align:center;
+    margin-bottom:40px;
+    font-size:32px;
+    position:relative;
+}
+
+h2::after{
+    content:'';
+    width:80px;
+    height:4px;
+    background:#4ca1af;
+    display:block;
+    margin:15px auto 0;
+    border-radius:5px;
+}
+
+/* PARAGRAPH ANIMATION */
+.container p{
+    margin-bottom:25px;
+    opacity:0;
+    transform:translateY(30px);
+    animation:fadeUp 1s ease forwards;
+}
+
+.container p:nth-child(2){animation-delay:0.3s;}
+.container p:nth-child(3){animation-delay:0.6s;}
+.container p:nth-child(4){animation-delay:0.9s;}
+.container p:nth-child(5){animation-delay:1.2s;}
+.container p:nth-child(6){animation-delay:1.5s;}
+.container p:nth-child(7){animation-delay:1.8s;}
+.container p:nth-child(8){animation-delay:2.1s;}
+
+/* FOOTER */
+footer{
+    background-color:#0b3199;
+    color:white;
+    text-align:center;
+    padding:25px;
+    margin-top:80px;
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn{
+    from{opacity:0;}
+    to{opacity:1;}
+}
+
+@keyframes slideDown{
+    from{opacity:0; transform:translateY(-40px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+@keyframes fadeUp{
+    from{opacity:0; transform:translateY(40px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+    header h1{font-size:32px;}
+    header p{font-size:16px;}
+    .container{margin-top:-40px;}
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Our Story</h1>
+    <p>Dreamland Christian Center</p>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="story.html">Our Vision</a>
+    <a href="leaders.html">Our Leaders</a>
+</nav>
+
+<div class="container">
+
+    <h2>The Story of Dreamland Christian Center</h2>
+
+    <p>
+        Dreamland Christian Center was born out of divine instruction, prayer,
+        and unwavering faith in God. What began as a vision placed in the heart
+        of Apostle Solomon Darkwa gradually became a living testimony of
+        obedience and dedication to the call of God.
+    </p>
+
+    <p>
+        With a deep burden to see lives transformed and destinies restored,
+        Apostle Solomon Darkwa stepped forward in faith, trusting that God
+        would establish what He had ordained.
+    </p>
+
+    <p>
+        Standing faithfully beside him from the very beginning was his wife,
+        Lady Pastor Portia Darkwa. Together, they built not just a church,
+        but a spiritual family grounded in faith, love, and unity.
+    </p>
+
+    <p>
+        From small gatherings filled with passionate worship and heartfelt
+        prayers, the ministry began to grow. Lives were touched. Families were
+        restored. Faith was strengthened.
+    </p>
+
+    <p>
+        Today, Dreamland Christian Center stands as a beacon of hope, prayer,
+        and transformation under strong spiritual leadership, with Reverend
+        Patrick Ocquaye serving faithfully as the General Overseer.
+    </p>
+
+    <p>
+        Dreamland Christian Center is more than a building — it is a divine
+        assignment. It is a place where faith is strengthened, prayers are
+        answered, and destinies are shaped.
+    </p>
+
+    <p style="font-weight:bold; text-align:center; margin-top:40px; font-size:20px;">
+        The vision remains clear: Changing Lives and Transforming Nations.
+    </p>
+
+</div>
+
+<footer>
+    <p>©️ 2026 Dreamland Christian Center | All Rights Reserved</p>
+</footer>
+
+</body>
+</html>

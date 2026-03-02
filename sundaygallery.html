@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Sunday Worship | Dreamland Christian Centre</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/x-icon" href="dreamland Logo png - Copy.png"/>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body{background:#0f172a;color:white;}
+
+.hero{
+height:70vh;
+background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.7)),
+url('sunday.jpg');
+background-size:cover;
+background-position:center;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+animation:zoomIn 8s infinite alternate;
+}
+
+@keyframes zoomIn{
+from{background-size:100%;}
+to{background-size:110%;}
+}
+
+.hero h1{
+font-size:3rem;
+animation:fadeDown 1.2s ease forwards;
+opacity:0;
+}
+
+@keyframes fadeDown{
+from{opacity:0;transform:translateY(-40px);}
+to{opacity:1;transform:translateY(0);}
+}
+
+.section{padding:80px 20px;text-align:center;}
+
+.card{
+max-width:600px;
+margin:auto;
+border-radius:20px;
+overflow:hidden;
+transition:0.4s;
+cursor:pointer;
+box-shadow:0 10px 25px rgba(0,0,0,0.6);
+}
+
+.card img{width:100%;transition:0.4s;}
+
+.card:hover{transform:scale(1.05);}
+.card:hover img{filter:brightness(70%);}
+
+.card-text{padding:25px;background:#1e293b;}
+.card-text h2{color:#38bdf8;margin-bottom:10px;}
+
+footer{padding:20px;text-align:center;background:#020617;}
+</style>
+</head>
+<body>
+
+<section class="hero">
+<h1>Sunday Worship Service</h1>
+</section>
+
+<section class="section">
+<a href="sunday-gallery.html" style="text-decoration:none;color:white;">
+<div class="card">
+<img src="WhatsApp Image 2026-02-24 at 12.02.28.jpeg" alt="Sunday Worship">
+<img src="WhatsApp Image 2026-02-24 at 12.02.29 (1).jpeg" alt="Sunday Worship">
+<img src="WhatsApp Image 2026-02-24 at 12.02.29 (2).jpeg" alt="Sunday Worship">
+<div class="card-text">
+</div>
+</div>
+</a>
+</section>
+
+<footer>© 2026 Dreamland Christian Centre</footer>
+
+</body>
+</html>

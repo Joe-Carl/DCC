@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Power City | Dreamland Christian Centre</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/x-icon" href="dreamland Logo png - Copy.png"/>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#0f172a;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* HERO */
+.hero{
+    height:100vh;
+    background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.7)),
+    url('WhatsApp Image 2026-02-24 at 17.27.16 (2).jpeg');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:20px;
+}
+
+.hero h1{
+    font-size:3.5rem;
+    font-weight:800;
+    animation:fadeDown 1.5s ease;
+}
+
+.hero p{
+    margin-top:15px;
+    font-size:1.3rem;
+    animation:fadeUp 2s ease;
+}
+
+/* NAVIGATION */
+nav{
+    background:rgba(15,23,42,0.95);
+    padding:15px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    backdrop-filter:blur(10px);
+    box-shadow:0 8px 25px rgba(0,0,0,0.4);
+}
+
+/* Logo + Church Name */
+.logo-area{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo-area img{
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    object-fit:cover;
+}
+
+.church-name{
+    display:flex;
+    flex-direction:column;
+    line-height:1.2;
+}
+
+.church-name h3{
+    font-size:16px;
+    font-weight:600;
+}
+
+.church-name span{
+    font-size:12px;
+    opacity:0.8;
+}
+
+/* Hamburger */
+.menu-btn{
+    width:28px;
+    height:20px;
+    position:relative;
+    cursor:pointer;
+}
+
+.menu-btn span{
+    position:absolute;
+    width:100%;
+    height:3px;
+    background:white;
+    transition:0.4s;
+}
+
+.menu-btn span:nth-child(1){ top:0; }
+.menu-btn span:nth-child(2){ top:8px; }
+.menu-btn span:nth-child(3){ top:16px; }
+
+.menu-btn.active span:nth-child(1){
+    transform:rotate(45deg);
+    top:8px;
+}
+.menu-btn.active span:nth-child(2){
+    opacity:0;
+}
+.menu-btn.active span:nth-child(3){
+    transform:rotate(-45deg);
+    top:8px;
+}
+
+/* Overlay */
+.overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.6);
+    backdrop-filter:blur(3px);
+    opacity:0;
+    visibility:hidden;
+    transition:0.4s;
+    z-index:1500;
+}
+
+.overlay.active{
+    opacity:1;
+    visibility:visible;
+}
+
+/* Popup Menu */
+.popup-menu{
+    position:fixed;
+    top:0;
+    right:-320px;
+    width:280px;
+    height:100%;
+    background:#0f172a;
+    box-shadow:-5px 0 20px rgba(0,0,0,0.4);
+    padding:80px 25px;
+    transition:0.4s ease;
+    z-index:2000;
+}
+
+.popup-menu a{
+    display:block;
+    color:white;
+    text-decoration:none;
+    margin:25px 0;
+    font-size:16px;
+    transition:0.3s;
+}
+
+.popup-menu a:hover{
+    color:#38bdf8;
+    transform:translateX(6px);
+}
+
+.popup-menu.active{
+    right:0;
+}
+
+/* SECTIONS */
+section{
+    padding:80px 20px;
+    text-align:center;
+}
+
+h2{
+    font-size:2.5rem;
+    margin-bottom:30px;
+    animation:glow 2s infinite alternate;
+}
+
+h2::after{
+    content:"";
+    width:80px;
+    height:4px;
+    background:#38bdf8;
+    display:block;
+    margin:10px auto;
+}
+
+.about p{
+    max-width:800px;
+    margin:auto;
+    line-height:1.8;
+    font-size:1.1rem;
+    opacity:0;
+    transform:translateY(30px);
+    transition:1s;
+}
+
+.about.show p{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.services-container{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:30px;
+    margin-top:40px;
+    perspective:1000px;
+}
+
+.service-card{
+    width:280px;
+    height:280px;
+    border-radius:20px;
+    position:relative;
+    transform-style:preserve-3d;
+    transition:transform 0.8s;
+    opacity:0;
+    transform:translateY(40px);
+}
+
+.service-card.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.service-card:hover{
+    transform:rotateY(180deg);
+}
+
+.card-front, .card-back{
+    position:absolute;
+    width:100%;
+    height:100%;
+    border-radius:20px;
+    backface-visibility:hidden;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+    background-size:cover;
+    background-position:center;
+    color:white;
+}
+
+.card-front::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.6);
+    border-radius:20px;
+}
+
+.card-front h3, .card-front p{
+    position:relative;
+    z-index:2;
+}
+
+.card-back{
+    background:linear-gradient(135deg,#1e3a8a,#38bdf8);
+    transform:rotateY(180deg);
+}
+
+footer{
+    padding:20px;
+    background:#020617;
+    font-size:0.9rem;
+    color:#aaa;
+}
+
+@keyframes fadeDown{
+    from{opacity:0; transform:translateY(-50px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+@keyframes fadeUp{
+    from{opacity:0; transform:translateY(50px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+@keyframes glow{
+    from{text-shadow:0 0 10px #38bdf8;}
+    to{text-shadow:0 0 25px #38bdf8;}
+}
+
+@media(max-width:768px){
+    .hero h1{font-size:2.2rem;}
+    .services-container{flex-direction:column;align-items:center;}
+}
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+    <div>
+        <h1>Dreamland Christian Centre</h1>
+        <p>Power City</p>
+        <p>Changing Lives and Transforming Nations</p>
+    </div>
+</section>
+
+<nav>
+    <div class="logo-area">
+        <img src="A New Design - Made with PosterMyWall (4).jpg" alt="Dreamland Christian Centre Logo">
+        <div class="logo-area">
+        <div class="church-name">
+            <h3>Dreamland Christian Centre</h3>
+            <span>Our Year Of Great Impact</span>
+        </div>
+    </div>
+
+    <div class="menu-btn" onclick="toggleMenu()" id="menuBtn">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</nav>
+
+<div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+
+<div class="popup-menu" id="popup">
+    <a href="index.html">Home</a>
+    <a href="branch.html">Back</a>
+    <a href="pcprograms.html">Major Programs</a>
+    <a href="pcgroups.html">Groups / Organizations</a>
+    <a href="visit2.html">Plan a Visit</a>
+</div>
+
+<section class="about" id="about">
+    <h2>About Power City</h2>
+    <p>..........................................................................................................................</p>
+</section>
+
+<section class="services">
+    <h2>Our Services</h2>
+    <div class="services-container">
+        <div class="service-card sunday">
+            <div class="card-front" style="background-image:url('WhatsApp Image 2026-02-24 at 17.27.16 (4).jpeg');">
+                <h3>Sunday Service</h3>
+                <p>9:00 AM – 12:00 PM</p>
+            </div>
+            <div class="card-back">
+                <h3>Worship Experience</h3>
+                <p>Powerful Word • Praise • Miracles</p>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <div class="card-front" style="background-image:url('WhatsApp Image 2026-02-24 at 17.27.16 (3).jpeg');">
+                <h3>Prayer Meeting</h3>
+                <p>Tuesday – 7:00 PM - 8:30 PM</p>
+            </div>
+            <div class="card-back">
+                <h3>Intercession Night</h3>
+                <p>Deep Prayer & Breakthrough</p>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <div class="card-front" style="background-image:url('WhatsApp Image 2026-02-24 at 12.02.30.jpeg');">
+                <h3>Empowerment Service</h3>
+                <p>Friday – 7:00 PM - 9:00 PM</p>
+            </div>
+            <div class="card-back">
+                <h3>Fire Encounter</h3>
+                <p>Healing • Deliverance • Prophetic</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    ©️ 2026 Dreamland Christian Centre – Power City | All Rights Reserved
+</footer>
+
+<script>
+function toggleMenu(){
+    document.getElementById("popup").classList.toggle("active");
+    document.getElementById("overlay").classList.toggle("active");
+    document.getElementById("menuBtn").classList.toggle("active");
+}
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting){
+            entry.target.classList.add('show');
+        }
+    });
+});
+
+document.querySelectorAll('.about, .service-card').forEach(el=>{
+    observer.observe(el);
+});
+</script>
+
+</body>
+</html>

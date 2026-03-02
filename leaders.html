@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta charset="UTF-8">
+    <title>Our Leaders | Dreamland Christian Center</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dreamland Christian Center</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/x-icon" href="dreamland Logo png - Copy.png"/>
+    
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:linear-gradient(-45deg,#0f172a,#1e293b,#0f172a,#020617);
+    background-size:400% 400%;
+    animation:bgMove 15s ease infinite;
+    color:#e2e8f0;
+}
+
+@keyframes bgMove{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+/* NAV */
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 8%;
+    background:rgba(15,23,42,0.8);
+    position:fixed;
+    width:100%;
+    top:0;
+    z-index:1000;
+    backdrop-filter:blur(15px);
+    animation:slideDown 1s ease;
+}
+
+@keyframes slideDown{
+    from{transform:translateY(-100%);}
+    to{transform:translateY(0);}
+}
+
+/* LOGO AREA */
+.logo-container{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo-container img{
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    object-fit:cover;
+    animation:logoGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes logoGlow{
+    from{box-shadow:0 0 5px #38bdf8;}
+    to{box-shadow:0 0 20px #38bdf8;}
+}
+
+.logo-text{
+    display:flex;
+    flex-direction:column;
+    line-height:1.2;
+}
+
+.logo-text strong{
+    color:#38bdf8;
+    font-size:16px;
+}
+
+.logo-text span{
+    font-size:11px;
+    color:#94a3b8;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:25px;
+}
+
+nav ul li a{
+    color:#e2e8f0;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+nav ul li a:hover{
+    color:#38bdf8;
+    text-shadow:0 0 10px #38bdf8;
+}
+
+
+/* HERO */
+.hero{
+    height:50vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+.hero h2{
+    font-size:40px;
+    color:#38bdf8;
+    animation:glow 3s ease-in-out infinite alternate;
+}
+
+@keyframes glow{
+    from{text-shadow:0 0 10px #38bdf8;}
+    to{text-shadow:0 0 30px #38bdf8;}
+}
+
+/* SECTION */
+section{
+    padding:80px 8%;
+    text-align:center;
+}
+
+.section-title{
+    font-size:32px;
+    margin-bottom:50px;
+    color:#38bdf8;
+}
+
+/* LEADERS GRID */
+.leaders{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:40px;
+}
+
+/* LEADER CARD */
+.leader-card{
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(15px);
+    border-radius:20px;
+    overflow:hidden;
+    transition:0.5s;
+    animation:fadeUp 1s ease forwards;
+    opacity:0;
+}
+
+@keyframes fadeUp{
+    from{transform:translateY(30px); opacity:0;}
+    to{transform:translateY(0); opacity:1;}
+}
+
+.leader-card img{
+    width:100%;
+    height:300px;
+    object-fit:cover;
+}
+
+.leader-card:hover{
+    transform:scale(1.05);
+    box-shadow:0 20px 50px rgba(56,189,248,0.4);
+}
+
+.leader-info{
+    padding:20px;
+}
+
+.leader-info h4{
+    margin-bottom:5px;
+    color:#38bdf8;
+}
+
+footer{
+    padding:30px;
+    background:#020617;
+    text-align:center;
+    color:#94a3b8;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+     <div class="logo-container">
+        <img src="A New Design - Made with PosterMyWall (4).jpg" alt="Church Logo">
+        <div class="logo-text">
+            <strong>Dreamland Christian Centre</strong>
+            <span>OUR YEAR OF GREAT IMPACT</span>
+        </div>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">Back</a></li>
+        <li><a href="Visit.html">Plan a Visit</a></li>
+        <li><a href="services.html">Services</a></li>
+    </ul>
+</nav>
+
+<div class="hero">
+    <h2>Our Church Leaders</h2>
+</div>
+
+<section>
+    <h3 class="section-title">Meet The Leadership Team</h3>
+
+    <div class="leaders">
+
+        <!-- COPY THIS CARD AND JUST CHANGE IMAGE + NAME -->
+
+        <!-- Leader 1 -->
+        <div class="leader-card">
+            <img src="WhatsApp Image 2026-02-26 at 14.10.29 (1).jpeg" alt="">
+            <div class="leader-info">
+                <h4>Apostle Solomon Darkwa</h4>
+                <p>Head Pastor
+                    <br> Founder Of Dreamland Christian Centre </br>
+                </p>
+            </div>
+        </div>
+
+        <!-- Leader 2 -->
+        <div class="leader-card">
+            <img src="WhatsApp Image 2026-02-28 at 08.17.23.jpeg" alt="">
+            <div class="leader-info">
+                <h4>Lapy Pastor Portia Darkwa</h4>
+                <p>First Lady </p>
+            </div>
+        </div>
+
+        <!-- Leader 3 -->
+        <div class="leader-card">
+            <img src="WhatsApp Image 2026-02-24 at 17.27.15.jpeg" alt="">
+            <div class="leader-info">
+                <h4>Rev. Patrick Ocquaye</h4>
+                <p>General Secretary</p>
+            </div>
+        </div>
+
+        <!-- Leader 4 -->
+        <div class="leader-card">
+            <img src="leader4.jpg" alt="">
+            <div class="leader-info">
+                <h4>Lady Ruth Ocquaye</h4>
+                <p>Lady Pastor</p>
+            </div>
+        </div>
+
+        <!-- Leader 5 -->
+        <div class="leader-card">
+            <img src="leader5.jpg" alt="">
+            <div class="leader-info">
+                <h4>Leader Name</h4>
+                <p>Position</p>
+            </div>
+        </div>
+
+        <!-- Leader 6 -->
+        <div class="leader-card">
+            <img src="leader6.jpg" alt="">
+            <div class="leader-info">
+                <h4>Leader Name</h4>
+                <p>Position</p>
+            </div>
+        </div>
+
+        <!-- Leader 7 -->
+        <div class="leader-card">
+            <img src="leader7.jpg" alt="">
+            <div class="leader-info">
+                <h4>Leader Name</h4>
+                <p>Position</p>
+            </div>
+        </div>
+
+        <!-- Leader 8 -->
+        <div class="leader-card">
+            <img src="leader8.jpg" alt="">
+            <div class="leader-info">
+                <h4>Leader Name</h4>
+                <p>Position</p>
+            </div>
+        </div>
+
+        <!-- Leader 9 -->
+        <div class="leader-card">
+            <img src="leader9.jpg" alt="">
+            <div class="leader-info">
+                <h4>Leader Name</h4>
+                <p>Position</p>
+            </div>
+        </div>
+
+        <!-- Leader 10 -->
+        <div class="leader-card">
+            <img src="leader10.jpg" alt="">
+            <div class="leader-info">
+                <h4>Leader Name</h4>
+                <p>Position</p>
+            </div>
+        </div>
+
+        <!-- Leader 11–20 (Duplicate & Change Names) -->
+
+        <div class="leader-card"><img src="leader11.jpg"><div class="leader-info"><h4>Leader Name</h4><p>Position</p></div></div>
+        <div class="leader-card"><img src="leader12.jpg"><div class="leader-info"><h4>Leader Name</h4><p>Position</p></div></div>
+        <div class="leader-card"><img src="leader13.jpg"><div class="leader-info"><h4>Leader Name</h4><p>Position</p></div></div>
+        <div class="leader-card"><img src="leader14.jpg"><div class="leader-info"><h4>Leader Name</h4><p>Position</p></div></div>
+        <div class="leader-card"><img src="leader15.jpg"><div class="leader-info"><h4>Leader Name</h4><p>Position</p></div></div>
+        <div class="leader-card"><img src="leader16.jpg"><div class="leader-info"><h4>Leader Name</h4><p>Position</p></div></div>
+        <div class="leader-card"><img src="leader17.jpg"><div class="leader-info"><h4>Leader Name</h4><p>Position</p></div></div>
+        <div class="leader-card"><img src="leader18.jpg"><div class="leader-info"><h4>Leader Name</h4><p>Position</p></div></div>
+        <div class="leader-card"><img src="leader19.jpg"><div class="leader-info"><h4>Leader Name</h4><p>Position</p></div></div>
+        <div class="leader-card"><img src="leader20.jpg"><div class="leader-info"><h4>Leader Name</h4><p>Position</p></div></div>
+
+    </div>
+</section>
+
+<footer>
+    ©️ 2026 Dreamland Christian Centre | All Rights Reserved
+</footer>
+
+</body>
+</html>

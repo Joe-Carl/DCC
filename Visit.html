@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Plan Your Visit | Dreamland Christian Center</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/x-icon" href="dreamland Logo png - Copy.png"/>
+
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#110f35;
+    overflow-x:hidden;
+}
+
+/* HERO */
+.hero{
+    height:95vh;
+    background:linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),
+    url('WhatsApp Image 2026-02-24 at 12.02.28.jpeg');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+    animation:zoomHero 15s infinite alternate ease-in-out;
+}
+
+.hero h1{
+    font-size:52px;
+    animation:float 4s ease-in-out infinite;
+}
+
+.hero p{
+    margin-top:15px;
+    font-size:22px;
+    animation:fadeUp 2s ease forwards;
+}
+
+/* NAV */
+nav{
+    background:rgba(15,23,42,0.95);
+    padding:18px;
+    text-align:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    backdrop-filter:blur(10px);
+}
+
+nav a{
+    color:#e2e8f0;
+    text-decoration:none;
+    margin:0 20px;
+    font-weight:500;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#38bdf8;
+    letter-spacing:1px;
+}
+
+/* SECTION */
+section{
+    padding:100px 20px;
+    text-align:center;
+}
+
+h2{
+    font-size:34px;
+    margin-bottom:60px;
+    color:#a0afcc;
+    position:relative;
+}
+
+h2::after{
+    content:'';
+    width:80px;
+    height:4px;
+    background:linear-gradient(90deg,#38bdf8,#2a5298);
+    display:block;
+    margin:15px auto;
+    border-radius:2px;
+    animation:shine 3s infinite linear;
+}
+
+/* SERVICES */
+.services{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:40px;
+}
+
+.card{
+    position:relative;
+    width:320px;
+    height:350px;
+    border-radius:25px;
+    overflow:hidden;
+    box-shadow:0 20px 50px rgba(0,0,0,0.4);
+    transition:0.6s;
+    color:white;
+    display:flex;
+    align-items:flex-end;
+    transform-style:preserve-3d;
+}
+
+.card:hover{
+    transform:rotateY(8deg) rotateX(6deg) scale(1.07);
+    box-shadow:0 30px 70px rgba(56,189,248,0.5);
+}
+
+.card::before{
+    content:'';
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.85));
+    top:0;
+    left:0;
+    transition:0.5s;
+}
+
+.card:hover::before{
+    background:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.9));
+}
+
+.card-content{
+    position:relative;
+    padding:30px;
+    z-index:2;
+    transition:0.5s;
+}
+
+.card:hover .card-content{
+    transform:translateY(-10px);
+}
+
+.card h3{
+    font-size:28px;
+    margin-bottom:10px;
+}
+
+/* SERVICE BACKGROUNDS */
+.tuesday{
+    background:url('https://images.unsplash.com/photo-1507692049790-de58290a4334') center/cover;
+}
+.friday{
+    background:url('https://images.unsplash.com/photo-1529070538774-1843cb3265df') center/cover;
+}
+.sunday{
+    background:url('https://images.unsplash.com/photo-1519681393784-d120267933ba') center/cover;
+}
+/* FORM */
+.visit-form{
+    max-width:550px;
+    margin:auto;
+    background:#c5c6c9;
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0 15px 40px rgba(0,0,0,0.1);
+    animation:fadeIn 1.5s ease;
+}
+
+.visit-form input,
+.visit-form select,
+.visit-form textarea{
+    width:100%;
+    padding:15px;
+    margin:12px 0;
+    border-radius:10px;
+    border:1px solid #ddd;
+    transition:0.3s;
+    font-size:15px;
+}
+
+.visit-form input:focus,
+.visit-form select:focus,
+.visit-form textarea:focus{
+    border-color:#2a5298;
+    outline:none;
+    box-shadow:0 0 10px rgba(42,82,152,0.2);
+}
+
+.visit-form button{
+    background:linear-gradient(45deg,#1e3c72,#2a5298);
+    color:white;
+    border:none;
+    padding:15px;
+    width:100%;
+    border-radius:50px;
+    cursor:pointer;
+    font-size:16px;
+    transition:0.4s;
+}
+
+.visit-form button:hover{
+    transform:scale(1.05);
+    box-shadow:0 10px 25px rgba(42,82,152,0.4);
+}
+
+/* MAPS */
+.maps-section{
+    background:#0f172a;
+    padding:100px 20px;
+}
+
+.maps-container{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:40px;
+}
+
+.map-card{
+    background:#fff;
+    border-radius:20px;
+    overflow:hidden;
+    width:330px;
+    transition:0.5s;
+}
+
+.map-card:hover{
+    transform:translateY(-15px) scale(1.05);
+    box-shadow:0 25px 60px rgba(56,189,248,0.4);
+}
+
+.map-card h3{
+    background:linear-gradient(45deg,#1e3c72,#2a5298);
+    color:white;
+    padding:15px;
+}
+
+.map-card iframe{
+    width:100%;
+    height:250px;
+    border:0;
+}
+
+/* FOOTER */
+footer{
+    background:#1e3c72;
+    color:white;
+    padding:30px;
+    text-align:center;
+}
+
+/* ANIMATIONS */
+@keyframes float{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-15px);}
+}
+
+@keyframes zoomHero{
+    from{background-size:100%;}
+    to{background-size:110%;}
+}
+
+@keyframes shine{
+    0%{background-position:-200px;}
+    100%{background-position:200px;}
+}
+
+@keyframes fadeUp{
+    from{opacity:0; transform:translateY(40px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+    .services{flex-direction:column; align-items:center;}
+    .maps-container{flex-direction:column; align-items:center;}
+    .hero h1{font-size:34px;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="hero">
+    <div>
+        <h1>Plan Your Visit</h1>
+        <p>We can't wait to welcome you to Dreamland Christian Centre</p>
+    </div>
+</div>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="branch.html">Branches</a>
+    <a href="services.html">Services</a>
+</nav>
+
+<section>
+    <h2>Our Weekly Services</h2>
+    <div class="services">
+
+        <div class="card tuesday">
+            <div class="card-content">
+                <h3>Tuesday</h3>
+                <p><strong>Prayer Service</strong></p>
+            </div>
+        </div>
+
+        <div class="card friday">
+            <div class="card-content">
+                <h3>Friday</h3>
+                <p><strong>Empowerment Service</strong></p>
+            </div>
+        </div>
+
+        <div class="card sunday">
+            <div class="card-content">
+                <h3>Sunday</h3>
+                <p><strong>Main Service</strong></p>
+            </div>
+        </div>
+
+    </div>
+</section>
+<section>
+    <h2>Let Us Know You're Coming</h2>
+
+    <div class="visit-form">
+        <form action="https://formsubmit.co/beemickey8@gmail.com" method="POST">
+            
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_subject" value="New Plan A Visit Submission - Dreamland Christian Center">
+
+            <input type="text" name="Full Name" placeholder="Full Name" required>
+            <input type="email" name="Email" placeholder="Email Address" required>
+            <input type="tel" name="Phone" placeholder="Phone Number">
+
+            <select name="Service" required>
+                <option value="">Select Service</option>
+                <option>Tuesday - Prayer Service</option>
+                <option>Friday - Empowerment Service</option>
+                <option>Sunday - Main Service</option>
+            </select>
+            <select name="Branch" required>
+                <option value="">Select Branch</option>
+                <option>Prayer City - Dansoman</option>
+                <option>Faith City - Agape, Ablekuma</option>
+                <option>Power City - Weija </option>
+            </select>
+
+
+            <textarea name="Message" rows="4" placeholder="Any prayer requests or special needs?"></textarea>
+
+            <button type="submit">Plan My Visit</button>
+
+        </form>
+    </div>
+
+<section class="maps-section">
+    <h2>Find Our Branches</h2>
+    <div class="maps-container">
+
+        <div class="map-card">
+            <h3>Prayer City</h3>
+            <iframe src="https://maps.google.com/maps?q=Dansoman%20Sahara%20Down%20Accra&t=&z=13&output=embed"></iframe>
+        </div>
+
+        <div class="map-card">
+            <h3>Faith City</h3>
+            <iframe src="https://maps.google.com/maps?q=Ablekuma%20Agape%20Accra&t=&z=13&output=embed"></iframe>
+        </div>
+
+        <div class="map-card">
+            <h3>Power City</h3>
+            <iframe src="https://maps.google.com/maps?q=Weija%20Accra&t=&z=13&output=embed"></iframe>
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    ©️ 2026 Dreamland Christian Centre | All Rights Reserved
+</footer>
+
+</body>
+</html>

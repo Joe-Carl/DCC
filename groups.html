@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Dreamland Christian Centre</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/x-icon" href="dreamland Logo png - Copy.png"/>
+
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#0f172a;
+    color:white;
+}
+
+/* HERO */
+.hero{
+    height:60vh;
+    background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.7)),
+    url('WhatsApp Image 2026-02-24 at 17.27.17.jpeg'); /* CHANGE THIS IMAGE */
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+.hero h1{
+    font-size:3rem;
+    animation: fadeSlideDown 1.2s ease forwards;
+    opacity:0;
+}
+
+/* SECTION */
+section{
+    padding:70px 20px;
+    text-align:center;
+}
+
+h2{
+    margin-bottom:30px;
+    font-size:2.3rem;
+    color:#38bdf8;
+    animation: fadeUp 1.2s ease forwards;
+    opacity:0;
+}
+
+/* NAV */
+nav{
+    background:rgba(15,23,42,0.95);
+    padding:18px;
+    text-align:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    backdrop-filter:blur(10px);
+    box-shadow:0 8px 25px rgba(0,0,0,0.4);
+}
+
+nav a{
+    color:#e2e8f0;
+    text-decoration:none;
+    margin:0 20px;
+    font-weight:500;
+    font-size:15px;
+    letter-spacing:1px;
+    transition:0.3s;
+    position:relative;
+}
+
+nav a:hover{
+    color:#38bdf8;
+}
+
+nav a::after{
+    content:"";
+    position:absolute;
+    width:0%;
+    height:2px;
+    left:0;
+    bottom:-5px;
+    background:#38bdf8;
+    transition:0.4s;
+}
+
+nav a:hover::after{
+    width:100%;
+}
+
+/* GROUP CARDS */
+.groups-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:25px;
+    max-width:1200px;
+    margin:auto;
+}
+
+.group-card{
+    position:relative;
+    height:260px;
+    border-radius:20px;
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    transition:0.4s;
+    opacity:0;
+    transform:translateY(40px);
+    animation: cardFadeUp 1s ease forwards;
+}
+
+.group-card:nth-child(1){
+    animation-delay:0.3s;
+}
+.group-card:nth-child(2){
+    animation-delay:0.6s;
+}
+
+.group-card::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.65);
+}
+
+.group-card h3,
+.group-card p,
+.group-card button{
+    position:relative;
+    z-index:2;
+}
+
+.group-card:hover{
+    transform:scale(1.05);
+}
+
+.group-card button{
+    margin-top:15px;
+    padding:10px 20px;
+    border:none;
+    border-radius:8px;
+    background:#38bdf8;
+    color:white;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.group-card button:hover{
+    transform:scale(1.1);
+    box-shadow:0 0 20px rgba(56,189,248,0.7);
+}
+
+/* FORM SECTION */
+.form-section{
+    margin-top:60px;
+    max-width:600px;
+    margin-left:auto;
+    margin-right:auto;
+    background:rgba(255,255,255,0.05);
+    padding:30px;
+    border-radius:20px;
+    animation: fadeUp 1.5s ease forwards;
+    opacity:0;
+    animation-delay:0.8s;
+}
+
+.form-section input,
+.form-section select,
+.form-section textarea{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border-radius:8px;
+    border:none;
+}
+
+.form-section button{
+    padding:12px;
+    width:100%;
+    border:none;
+    border-radius:8px;
+    background:#22c55e;
+    color:white;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.form-section button:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 25px rgba(34,197,94,0.6);
+}
+
+footer{
+    padding:20px;
+    background:#020617;
+    text-align:center;
+    font-size:0.9rem;
+    margin-top:50px;
+    opacity:0;
+    animation: fadeIn 2s ease forwards;
+}
+
+/* ===== KEYFRAMES ===== */
+@keyframes fadeSlideDown{
+    from{opacity:0; transform:translateY(-40px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+@keyframes fadeUp{
+    from{opacity:0; transform:translateY(30px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+@keyframes cardFadeUp{
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes fadeIn{
+    to{opacity:1;}
+}
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+    <h1> Groups & Organizations</h1>
+</section>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="branch.html">Branches</a>
+    <a href="fcprogam.html">Major Programs</a>
+</nav>
+
+<section>
+    <h2>Join a Department</h2>
+
+    <div class="groups-container">
+
+        <!-- CHANGE EACH IMAGE BELOW -->
+
+        <div class="group-card" style="background-image:url('WhatsApp Image 2026-02-24 at 12.02.29 (4).jpeg');">
+            <h3>Men of Faith</h3>
+            <p>Men's Fellowship</p>
+            <button onclick="selectGroup('Men of Faith')">Join Group</button>
+        </div>
+
+        <div class="group-card" style="background-image:url('WhatsApp Image 2026-02-24 at 17.27.15 (1).jpeg');">
+            <h3>Pearls of Glory</h3>
+            <p>Women's Fellowship</p>
+            <button onclick="selectGroup('Pearls of Glory')">Join Group</button>
+        </div>
+
+    </div>
+
+    <!-- EMAIL FORM -->
+    <div class="form-section">
+        <h3>Join Group</h3>
+
+        <form action="https://formsubmit.co/beemickey8@gmail.com" method="POST">
+
+            <!-- Prevent spam -->
+            <input type="hidden" name="_captcha" value="false">
+
+            <!-- Redirect after submit -->
+            <input type="hidden" name="_next" value="thankyou.html">
+
+            <input type="text" name="Full Name" placeholder="Full Name" required>
+            <input type="email" name="Email" placeholder="Email Address" required>
+            <input type="tel" name="Phone Number" placeholder="Phone Number" required>
+
+            <select name="Group" id="groupSelect" required>
+                <option value="">Select Group</option>
+                <option>Men of Faith</option>
+                <option>Pearls of Glory</option>
+            </select>
+            <textarea name="Message" rows="4" placeholder="Why do you want to join this group?"></textarea>
+
+            <button type="submit">Submit Request</button>
+        </form>
+    </div>
+
+</section>
+
+<footer>
+©️ 2026 Dreamland Christian Centre | All Rights Reserved
+</footer>
+
+<script>
+function selectGroup(groupName){
+    document.getElementById("groupSelect").value = groupName;
+    window.scrollTo({top:document.querySelector(".form-section").offsetTop,behavior:'smooth'});
+}
+
+// Smooth reveal on scroll
+const revealElements = document.querySelectorAll('.group-card, .form-section');
+
+window.addEventListener('scroll', () => {
+    revealElements.forEach(el => {
+        const windowHeight = window.innerHeight;
+        const revealTop = el.getBoundingClientRect().top;
+        if(revealTop < windowHeight - 100){
+            el.style.opacity = "1";
+            el.style.transform = "translateY(0)";
+        }
+    });
+});
+</script>
+
+</body>
+</html>

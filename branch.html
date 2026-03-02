@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Dreamland Christian Center</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/x-icon" href="dreamland Logo png - Copy.png"/>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    background:linear-gradient(-45deg,#eef2ff,#f8fafc,#eef2ff,#ffffff);
+    background-size:400% 400%;
+    animation:bgMove 18s ease infinite;
+    color:#333;
+}
+
+/* BACKGROUND ANIMATION */
+@keyframes bgMove{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+/* HERO */
+.hero{
+    height:70vh;
+    background:linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),
+    url('WhatsApp Image 2026-02-24 at 17.27.16 (1).jpeg');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+    animation:zoomHero 20s ease-in-out infinite alternate;
+}
+
+@keyframes zoomHero{
+    from{background-size:100%;}
+    to{background-size:110%;}
+}
+
+.hero h1{
+    font-size:45px;
+    animation:fadeDown 1.2s ease;
+}
+
+.hero p{
+    margin-top:15px;
+    font-size:20px;
+    animation:fadeUp 1.5s ease;
+}
+
+/* NAV */
+nav{
+    background:rgba(15,23,42,0.95);
+    padding:18px;
+    text-align:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    backdrop-filter:blur(10px);
+    box-shadow:0 8px 25px rgba(0,0,0,0.4);
+}
+
+nav a{
+    color:#e2e8f0;
+    text-decoration:none;
+    margin:0 20px;
+    font-weight:500;
+    font-size:15px;
+    letter-spacing:1px;
+    transition:0.3s;
+    position:relative;
+}
+
+nav a::after{
+    content:'';
+    position:absolute;
+    left:0;
+    bottom:-6px;
+    width:0%;
+    height:2px;
+    background:#38bdf8;
+    transition:0.4s;
+}
+
+nav a:hover{
+    color:#38bdf8;
+}
+
+nav a:hover::after{
+    width:100%;
+}
+
+/* SECTION */
+section{
+    padding:80px 20px;
+    text-align:center;
+}
+
+.branches{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:40px;
+}
+
+/* BRANCH CARD */
+.branch-card{
+    position:relative;
+    width:350px;
+    padding:60px 30px;
+    border-radius:25px;
+    overflow:hidden;
+    color:white;
+    box-shadow:0 20px 50px rgba(0,0,0,0.25);
+    transition:0.5s;
+    animation:slideUp 1s ease forwards;
+    opacity:0;
+    background-size:cover;
+    background-position:center;
+}
+
+/* Floating animation */
+.branch-card{
+    animation:slideUp 1s ease forwards, floatCard 6s ease-in-out infinite;
+}
+
+@keyframes floatCard{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-10px);}
+}
+
+.branch-card::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.6);
+    z-index:0;
+}
+
+.branch-card h2,
+.branch-card p,
+.branch-card a{
+    position:relative;
+    z-index:1;
+}
+
+.branch-card:nth-child(1){
+    animation-delay:0.4s;
+    background:url('WhatsApp Image 2026-02-24 at 17.27.17 (1).jpeg') no-repeat center center/cover;
+}
+
+.branch-card:nth-child(2){
+    animation-delay:0.8s;
+    background:url('WhatsApp Image 2026-02-24 at 17.27.15.jpeg') no-repeat center center/cover;
+}
+
+.branch-card:nth-child(3){
+    animation-delay:1.2s;
+    background:url('WhatsApp Image 2026-02-24 at 17.27.17.jpeg') no-repeat center center/cover;
+}
+
+.branch-card:hover{
+    transform:translateY(-12px) scale(1.05);
+    box-shadow:0 30px 70px rgba(0,0,0,0.35);
+}
+
+.branch-card h2{
+    margin-bottom:20px;
+    font-size:28px;
+}
+
+.branch-card p{
+    font-size:15px;
+    margin-bottom:30px;
+    line-height:1.6;
+}
+
+/* BUTTON */
+.branch-card a{
+    display:inline-block;
+    padding:12px 28px;
+    border-radius:50px;
+    background:linear-gradient(45deg,#1e3c72,#2a5298);
+    color:white;
+    text-decoration:none;
+    font-size:14px;
+    transition:0.4s;
+}
+
+.branch-card a:hover{
+    transform:scale(1.1);
+    box-shadow:0 10px 25px rgba(42,82,152,0.5);
+}
+
+/* FOOTER */
+footer{
+    background:#1e3c72;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+/* ENTRANCE ANIMATIONS */
+@keyframes fadeDown{
+    from{opacity:0; transform:translateY(-30px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+@keyframes fadeUp{
+    from{opacity:0; transform:translateY(30px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+@keyframes slideUp{
+    from{transform:translateY(50px); opacity:0;}
+    to{opacity:1; transform:translateY(0);}
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+    .branches{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .hero h1{
+        font-size:32px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="hero">
+    <div>
+        <h1>Our Branches</h1>
+        <p>CHANGING LIVES AND TRANSFORMING NATIONS</p>
+    </div>
+</div>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="Visit.html">Plan A Visit</a>
+    <a href="services.html">Services</a>
+</nav>
+
+<section>
+    <div class="branches">
+
+        <div class="branch-card">
+            <h2>Prayer City</h2>
+            <p>
+                Prayer City is the main branch of Dreamland Christian Center.
+                This branch is Headed by the General Overseer of DCC,
+                <br>Apostle Solomon Darkwa.</br>
+            </p>
+            <a href="prayercity.html">Visit Prayer City</a>
+        </div>
+
+        <div class="branch-card">
+            <h2>Faith City</h2>
+            <p>
+                Faith City is a growing sub-branch.
+                <br>This Branch is headed by</br>
+                <br>The General Secretary,</br>
+                Rev. Patrick Ocquaye.
+            </p>
+            <a href="faithcity.html">Visit Faith City</a>
+        </div>
+
+        <div class="branch-card">
+            <h2>Power City</h2>
+            <p>
+                Power City is a growing sub-branch.
+                <br>This Branch is headed by</br>
+                Pastor Sampson.
+            </p>
+            <a href="powercity.html">Visit Power City</a>
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    ©️ 2026 Dreamland Christian Center | All Rights Reserved
+</footer>
+
+</body>
+</html>

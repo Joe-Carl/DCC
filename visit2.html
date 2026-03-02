@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Plan Your Visit | Dreamland Christian Center</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dreamland Christian Center</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/x-icon" href="dreamland Logo png - Copy.png"/>
+
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#110f35;
+    overflow-x:hidden;
+}
+
+/* HERO */
+.hero{
+    height:90vh;
+    background:linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),
+    url('WhatsApp Image 2026-02-24 at 12.02.28.jpeg');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+}
+
+.hero h1{
+    font-size:48px;
+    animation:fadeDown 1.5s ease;
+}
+
+.hero p{
+    margin-top:15px;
+    font-size:20px;
+    opacity:0;
+    animation:fadeUp 1.5s ease forwards;
+    animation-delay:1s;
+}
+
+
+/* SECTION */
+section{
+    padding:80px 20px;
+    text-align:center;
+}
+
+h2{
+    font-size:32px;
+    margin-bottom:50px;
+    color:#a0afcc;
+    position:relative;
+}
+
+h2::after{
+    content:'';
+    width:60px;
+    height:4px;
+    background:#a9afb8;
+    display:block;
+    margin:10px auto;
+    border-radius:2px;
+}
+nav{
+    background:rgba(15,23,42,0.95);
+    padding:18px;
+    text-align:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    backdrop-filter:blur(10px);
+    box-shadow:0 8px 25px rgba(0,0,0,0.4);
+}
+
+nav a{
+    color:#e2e8f0;
+    text-decoration:none;
+    margin:0 20px;
+    font-weight:500;
+    font-size:15px;
+    letter-spacing:1px;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#38bdf8;
+}
+/* SERVICES */
+.services{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:30px;
+}
+
+.card{
+    background:#ffffff;
+    padding:35px 25px;
+    width:280px;
+    border-radius:15px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.1);
+    transition:0.4s;
+    opacity:0;
+    transform:translateY(40px);
+    animation:slideUp 1s forwards;
+}
+
+.card:nth-child(1){animation-delay:0.9s;}
+.card:nth-child(2){animation-delay:0.6s;}
+.card:nth-child(3){animation-delay:0.3s;}
+
+.card:hover{
+    transform:translateY(-10px) scale(1.05);
+    box-shadow:0 20px 40px rgba(0,0,0,0.2);
+}
+
+.card h3{
+    font-size:22px;
+    color:#2a5298;
+    margin-bottom:10px;
+}
+
+/* FORM */
+.visit-form{
+    max-width:550px;
+    margin:auto;
+    background:#c5c6c9;
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0 15px 40px rgba(0,0,0,0.1);
+    animation:fadeIn 1.5s ease;
+}
+
+.visit-form input,
+.visit-form select,
+.visit-form textarea{
+    width:100%;
+    padding:15px;
+    margin:12px 0;
+    border-radius:10px;
+    border:1px solid #ddd;
+    transition:0.3s;
+    font-size:15px;
+}
+
+.visit-form input:focus,
+.visit-form select:focus,
+.visit-form textarea:focus{
+    border-color:#2a5298;
+    outline:none;
+    box-shadow:0 0 10px rgba(42,82,152,0.2);
+}
+
+.visit-form button{
+    background:linear-gradient(45deg,#1e3c72,#2a5298);
+    color:white;
+    border:none;
+    padding:15px;
+    width:100%;
+    border-radius:50px;
+    cursor:pointer;
+    font-size:16px;
+    transition:0.4s;
+}
+
+.visit-form button:hover{
+    transform:scale(1.05);
+    box-shadow:0 10px 25px rgba(42,82,152,0.4);
+}
+
+/* FOOTER */
+footer{
+    background:#1e3c72;
+    color:white;
+    padding:25px;
+    text-align:center;
+    margin-top:50px;
+}
+
+/* ANIMATIONS */
+@keyframes fadeDown{
+    from{opacity:0; transform:translateY(-30px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+@keyframes fadeUp{
+    from{opacity:0; transform:translateY(30px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+@keyframes slideUp{
+    to{opacity:1; transform:translateY(0);}
+}
+
+@keyframes fadeIn{
+    from{opacity:0;}
+    to{opacity:1;}
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+    .hero h1{font-size:32px;}
+    .services{flex-direction:column; align-items:center;}
+}
+
+
+/* RESPONSIVE */
+@media(max-width:768px){
+    .hero h1{font-size:32px;}
+    .branches{flex-direction:column; align-items:center;}
+}
+</style>
+</head>
+
+<body>
+
+
+<div class="hero">
+    <div>
+        <h1>Plan Your Visit</h1>
+        <p>We can't wait to welcome you to Dreamland Christian Centre</p>
+    </div>
+</div>
+    <nav>
+    <a href="index.html">Home</a>
+    <a href="branch.html">Back</a>
+    <a href="branch.html">Branches</a>
+    <a href="services.html">Services</a>
+</nav>
+
+<section>
+    <h2>Our Weekly Services</h2>
+    <div class="services">
+
+        <div class="card">
+            <h3>Tuesday</h3>
+            <p><strong>Prayer Service</strong></p>
+        </div>
+
+        <div class="card">
+            <h3>Friday</h3>
+            <p><strong>Empowerment Service</strong></p>
+        </div>
+
+        <div class="card">
+            <h3>Sunday</h3>
+            <p><strong>Main Service</strong></p>
+        </div>
+
+    </div>
+</section>
+
+<section>
+    <h2>Let Us Know You're Coming</h2>
+
+    <div class="visit-form">
+        <form action="https://formsubmit.co/beemickey8@gmail.com" method="POST">
+            
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_subject" value="New Plan A Visit Submission - Dreamland Christian Center">
+
+            <input type="text" name="Full Name" placeholder="Full Name" required>
+            <input type="email" name="Email" placeholder="Email Address" required>
+            <input type="tel" name="Phone" placeholder="Phone Number">
+
+            <select name="Service" required>
+                <option value="">Select Service</option>
+                <option>Tuesday - Prayer Service</option>
+                <option>Friday - Empowerment Service</option>
+                <option>Sunday - Main Service</option>
+            </select>
+
+
+            <textarea name="Message" rows="4" placeholder="Any prayer requests or special needs?"></textarea>
+
+            <button type="submit">Plan My Visit</button>
+
+        </form>
+    </div>
+</section>
+
+<footer>
+    © 2026 Dreamland Christian Centre | All Rights Reserved
+</footer>
+
+</body>
+</html>
